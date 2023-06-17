@@ -23,7 +23,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Get file diff
       id: diff-files
-      uses: trilom/file-changes-action@v1.2.4
+      uses: markgilbert-git/file-changes-action@v1.2.5
+
       with:
         output: '\n'
         fileOutput: '\n'
