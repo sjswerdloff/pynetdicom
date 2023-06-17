@@ -31,7 +31,7 @@ jobs:
     - name: Get Python file diff
       id: pydiff
       run: >
-        echo "pyfiles::$(echo -e
+        echo "pyfiles=$(echo -e
         '${{ steps.diff-files.outputs.files_added }}\n${{ steps.diff-files.outputs.files_modified }}'
         | grep '\.py' | tr '\n' ' '
         )" >> $GITHUB_OUTPUT
