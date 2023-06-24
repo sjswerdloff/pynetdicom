@@ -372,7 +372,7 @@ def main(args=None):
         for status, rsp_identifier in responses:
             # If `status.Status` is one of the 'Pending' statuses then
             #   `rsp_identifier` is the C-FIND response's Identifier dataset
-            if status and status.Status in [0xFF00, 0xFF01]:
+            if status and status.Status in [0xFF00, 0xFF01, 0x0000] and rsp_identifier is not None:
                 if args.write:
                     rsp_identifier.file_meta = get_file_meta(assoc, query_model)
                     rsp_identifier.save_as(next(fname), write_like_original=False)
